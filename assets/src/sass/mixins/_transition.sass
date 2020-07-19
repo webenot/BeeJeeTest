@@ -1,0 +1,41 @@
+@mixin transition($properties...)
+  $webkit: ()
+  $moz: ()
+  $ms: ()
+  $o: ()
+  $spec: ()
+
+  @each $list in $properties
+    $webkitList: ()
+    $mozList: ()
+    $msList: ()
+    $oList: ()
+    $specList: ()
+    @each $var in $list
+      @if $var == "transform"
+        $specList: append($specList, transform, space)
+        $webkitList: append($webkitList, -webkit-transform, space)
+        $mozList: append($mozList, -moz-transform, space)
+        $msList: append($msList, -ms-transform, space)
+        $oList: append($oList, -o-transform, space)
+      @else
+        $specList: append($specList, $var, space)
+        $webkitList: append($webkitList, $var, space)
+        $mozList: append($mozList, $var, space)
+        $msList: append($msList, $var, space)
+        $oList: append($oList, $var, space)
+
+    $webkit: append($webkit, $webkitList, comma)
+    $moz: append($moz, $mozList, comma)
+    $ms: append($ms, $msList, comma)
+    $o: append($o, $oList, comma)
+    $spec: append($spec, $list, comma)
+
+  -webkit-transition: $webkit
+  -moz-transition: $moz
+  -ms-transition: $ms
+  -o-transition: $o
+  transition: $spec
+
+=transition-delay($times...)
+  +prefixer(transition-delay, $times, webkit moz ms o)

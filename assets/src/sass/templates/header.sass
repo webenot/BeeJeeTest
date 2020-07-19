@@ -1,0 +1,19 @@
+.logo a
+  color: $main-text-color
+  &:hover, &:active, &:focus
+    text-decoration: none
+    color: $main-text-color
+  .title
+    +padding(null null null $card-columns-gap)
+    text-transform: uppercase
+
+.main-menu-wrapper
+  position: relative
+  .navbar-collapse
+    height: 100%
+    +align-items(center)
+    +justify-content(flex-end)
+
+@include media-breakpoint-down(lg)
+  .main-menu-wrapper
+    text-align: right

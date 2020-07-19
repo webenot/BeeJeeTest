@@ -1,0 +1,11 @@
+src/lib
+src/font
+src/img
+src/jade
+src/sass
+dist
+node_modules/
+.git
+.idea
+form/node_modules
+form/build

@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap"
+
+@import "mixins"
+@import "variables"
+
+body
+  font-size: 16px
+
+@import "templates/modals"
+@import "templates/header"
+@import "templates/task-item"
+@import "templates/pagination"
+
+@import "forms"
+@import "toast"
+
+.add-task-wrapper
+  text-align: right
+  +margin($card-columns-gap 0)
+
+.hidden
+  display: none
