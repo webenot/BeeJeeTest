@@ -4,7 +4,7 @@ $pages = makePaginationArray($tasksCount, $limit, $page, 1);
 $prevPage = $page - 1;
 $nextPage = $page + 1;
 $lastPage = $pages[count($pages) - 1];
-if (count($pages) <= 1) :
+if (count($pages) > 1) :
 ?>
 <div class="container">
   <nav aria-label="Page navigation">
